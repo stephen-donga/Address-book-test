@@ -26,40 +26,42 @@ export default function Home() {
     setAddresse(event.target.value)
   }
 
-  const createContact = async ()=>{
-
-    const user = {
-      firstname:firstname,
-      lastname:lastname,
-      phone:phone,
-      address:address
-    }
-
-    try{
-      const res = fetch('http://contacts:8000/add', {
-        method:"POST",
-        headers:{
-          "Accept":"applicatio/json",
-          "Content-Type":"application/json"
-        },
-        body:JSON.stringify(user)
-      })
-  }catch(error){
-    console.log(error)
+  const user = {
+    firstname:firstname,
+    lastname:lastname,
+    phone:phone,
+    address:address
   }
+  const fetchData = async()=>{
+
+    const res = await fetch('http://localhost:8000/contacts/add',{
+      method:"POST",
+      headers:{
+        "Accept":"application/json",
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(user)
+    })
+    const re = res.json();
+    console.log(re)
+    setData(re)
+
   }
+
+  useEffect(()=>{
+  },[])
 
   const handleSubmit =(event)=>{
     event.preventDefault();
-    createContact();
-      
+    fetchData();
 
       setFirstname("");
       setLastname("");
       setPhone("");
       setAddresse("")
   }
- 
+
+  // console.log(data)
   return (
       <div className="form-container">
         <div className="sections">
