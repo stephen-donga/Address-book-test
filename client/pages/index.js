@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {Form, Button} from 'semantic-ui-react'
 export default function Home() {
 
@@ -7,7 +7,6 @@ export default function Home() {
   const [lastname, setLastname] = useState("");
   const [phone, setPhone] = useState(null);
   const [address, setAddresse] = useState("");
-  const [data, setData] = useState({});
 
 
   const handleFname = (event)=>{
@@ -32,8 +31,8 @@ export default function Home() {
     phone:phone,
     address:address
   }
-  const fetchData = async()=>{
 
+  const createContact = async()=>{
     const res = await fetch('http://localhost:8000/contacts/add',{
       method:"POST",
       headers:{
@@ -42,17 +41,11 @@ export default function Home() {
       },
       body:JSON.stringify(user)
     });
-    const result = res.json();
-    return setData(result)
-
   }
-
-  useEffect(()=>{
-  },[])
 
   const handleSubmit =(event)=>{
     event.preventDefault();
-    fetchData();
+    createContact();
 
       setFirstname("");
       setLastname("");
@@ -60,17 +53,17 @@ export default function Home() {
       setAddresse("")
   }
 
-  console.log(data)
   return (
       <div className="form-container">
         <div className="sections">
           <div className="add-contact">
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit = {handleSubmit}>
               <Form.Input
                 fluid
                 label='First name' 
                 placeholder='First name'
                 name='firstname'
+                required
                 value={firstname}
                 onChange={handleFname}
               />
@@ -110,7 +103,8 @@ export default function Home() {
              
           </div>
           <div className="contacts">
-              <h5>Contacts</h5>
+              <h5>Address Book</h5>
+              <p>Please ! click on the Address list tab to view contacts</p>
           </div>
 
         </div>
