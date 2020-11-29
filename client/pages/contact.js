@@ -14,7 +14,7 @@ const AddressList = ({contacts}) =>{
                         <hr/>
                         <div className="details">
                             <div className="details">Phone number:</div>
-                            <div className="details">{item.phone}</div>
+                            <div className="details">+256{item.phone}</div>
                         </div>
                         <div className="details">
                             <div className="details">Address:</div>

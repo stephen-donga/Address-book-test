@@ -41,10 +41,9 @@ export default function Home() {
         "Content-Type":"application/json"
       },
       body:JSON.stringify(user)
-    })
-    const re = res.json();
-    console.log(re)
-    setData(re)
+    });
+    const result = res.json();
+    return setData(result)
 
   }
 
@@ -61,7 +60,7 @@ export default function Home() {
       setAddresse("")
   }
 
-  // console.log(data)
+  console.log(data)
   return (
       <div className="form-container">
         <div className="sections">
@@ -79,7 +78,7 @@ export default function Home() {
               <Form.Input
                 fluid
                 label='Last name' 
-                placeholder='First name'
+                placeholder='Last name'
                 name='firstname'
                 value={lastname}
                 onChange={handleLname}
@@ -88,7 +87,7 @@ export default function Home() {
               <Form.Input
                 fluid
                 label='Phone number' 
-                placeholder='+256'
+                placeholder='eg: 0777111234'
                 name='phone'
                 value={phone}
                 onChange={handlePhone}

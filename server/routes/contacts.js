@@ -21,7 +21,7 @@ router.route('/add').post((req, res)=>{
     });
 
     newContact.save()
-    .then(()=>res.json('Contact Adde'))
+    .then(()=>res.json('Contact Added'))
     .catch(err => res.status(400).json('Error'+err));
 });
 
