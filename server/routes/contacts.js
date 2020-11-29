@@ -8,12 +8,14 @@ router.route('/').get((req, res)=>{
 });
 
 router.route('/add').post((req, res)=>{
-    const username = req.body.username;
+    const firstname = req.body.firstname;
+    const lastname = req.body.lastname;
     const phone = Number(req.body.phone);
     const address = req.body.address;
 
     const newContact = new Contact({
-        username, 
+        firstname, 
+        lastname,
         phone, 
         address
     });

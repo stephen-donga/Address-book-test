@@ -7,7 +7,7 @@ const Navbar = () =>(
             <a>Address Book</a>
         </Link>
         <Link href="/contact">
-            <a>Add Contact</a>
+            <a>Address List</a>
         </Link>
     </nav>
 );

@@ -1,6 +1,15 @@
 h1{
     text-align: center;
 }
+h3{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+h5{
+    text-align: center;
+}
 .wrapper{
     max-width: 1200px;
     padding: 0 16px;
@@ -25,3 +34,48 @@ h1{
     color:#fff;
     font-size: 2rem;
 }
+
+.navbar-brand:hover, .create:hover{
+    color:#fff;
+
+}
+
+.contact-details{
+    width: 40vw;
+    margin:auto;
+    margin-bottom: 10px;
+    background-color: rgb(204, 204, 130);
+    padding: 10px;
+    border-radius: 5px;
+}
+.details{
+    width: 80%;
+    margin:auto;
+    display:flex;
+    flex-direction: row;
+    justify-content:start;
+    padding:15;
+    color:rgb(2, 2, 36);
+    font-size: 1rem;
+    font-family:'Times New Roman', Times, serif;
+}
+ .form-container{
+     display: flex;
+     margin: auto;
+ }
+ .sections{
+     width: 80vw;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+ .add-contact{
+    width: 60vw;
+
+ }
+ .contacts{
+    width: 40vw;
+
+ }
+ 
+ 
