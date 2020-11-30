@@ -1,5 +1,3 @@
-import {Button, Card} from 'semantic-ui-react';
-
 const AddressList = ({contacts}) =>{
     console.log(contacts)
    return(
