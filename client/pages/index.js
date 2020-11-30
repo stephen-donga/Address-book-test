@@ -33,7 +33,7 @@ export default function Home() {
   }
 
   const createContact = async()=>{
-    const res = await fetch('http://localhost:8000/contacts/add',{
+    const res = await fetch('http://localhost:3000/contacts/add',{
       method:"POST",
       headers:{
         "Accept":"application/json",

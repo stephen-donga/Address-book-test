@@ -2,7 +2,7 @@ const AddressList = ({contacts}) =>{
     console.log(contacts)
    return(
     <div className="contacts-container">
-    <h3>Address List</h3>
+    <h3>Contact List</h3>
     <div className="grid wrapper">
         {
             contacts.map(item =>{
@@ -30,7 +30,7 @@ const AddressList = ({contacts}) =>{
    };
 
 AddressList.getInitialProps = async () => {
-    const res = await fetch('http://localhost:8000/contacts');
+    const res = await fetch('http://localhost:3000/contacts');
     const data = await res.json();
 
     return {contacts:data};
