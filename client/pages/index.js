@@ -33,7 +33,7 @@ export default function Home() {
   }
 
   const createContact = async()=>{
-    const res = await fetch('https://address-book-test.vercel.app/contacts/add',{
+    const res = await fetch('http://localhost:3000/contacts/add',{
       method:"POST",
       headers:{
         "Accept":"application/json",
@@ -105,7 +105,7 @@ export default function Home() {
           </div>
           <div className="contacts">
               <h5>Address Book</h5>
-              <p>Please ! click on the Address list tab to view contacts</p>
+              <p>Please ! click on the Contact list tab to view contacts</p>
           </div>
 
         </div>
