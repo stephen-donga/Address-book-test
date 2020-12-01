@@ -30,7 +30,7 @@ const AddressList = ({contacts}) =>{
    };
 
 AddressList.getInitialProps = async () => {
-    const res = await fetch('http://localhost:3000/contacts');
+    const res = await fetch('https://address-book-test.vercel.app/contact');
     const data = await res.json();
 
     return {contacts:data};
