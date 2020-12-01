@@ -33,7 +33,7 @@ export default function Home() {
   }
 
   const createContact = async()=>{
-    const res = await fetch('https://address-book-test.vercel.app/contact',{
+    const res = await fetch('https://address-book-test.vercel.app/contacts/add',{
       method:"POST",
       headers:{
         "Accept":"application/json",
